@@ -1,0 +1,11 @@
+User-agent:*
+Disallow: /adminConsole.php
+Disallow: /Datas/
+Disallow: /m/Datas/
+Sitemap: https://fur-chins/Sitemap.xml
+
+User-agent: YandexBot
+Disallow: /adminConsole.php
+Disallow: /Datas/
+Disallow: /m/Datas/
+Host: https://fur-chins.ru

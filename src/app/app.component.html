@@ -1,0 +1,11 @@
+<header>
+  <app-nav-bar></app-nav-bar>
+</header>
+
+<main (click)="hideBasket()" style="background: #222;">
+  <router-outlet></router-outlet>
+</main>
+
+<footer (click)="hideBasket()">
+  <app-footer></app-footer>
+</footer>

@@ -1,0 +1,38 @@
+<nav class="container-fluid position-fixed" style="z-index: 10;">
+  <div class="row">
+    <div class="col-12 d-block d-md-none">
+      <div class="row">
+        <div class="col-auto header-menu-more p-0" (click)="isBasketOpen = !isBasketOpen" [class.d-none]="!isBasketOpen">
+          <img src="https://fur-chins.ru/MyImages/main/backImage.png" class="img-fluid header-menu-more-button" alt="Close basket">
+        </div>
+        <div class="col p-0">
+          <h1 class="header-title m-0">Alliance of breeders fur chinchillas</h1>
+        </div>
+        <div class="col-auto header-menu-more p-0" (click)="isMenuOpen = !isMenuOpen" [class.d-none]="isBasketOpen"
+             [class.header-basket-add]="isAddProductAnimation">
+          <img src="https://fur-chins.ru/MyImages/main/menuMobile.png" class="img-fluid header-menu-more-button" alt="Menu button">
+        </div>
+      </div>
+    </div>
+    <div class="col-12 header-menu" [class.open]="isMenuOpen">
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <a routerLink="/" class="col-12 col-md header-link" (click)="isMenuOpen = false; isBasketOpen = false;">Главная</a>
+            <a routerLink="buying" class="col-12 col-md header-link" (click)="isMenuOpen = false; isBasketOpen = false;">Шиншиллы</a>
+            <a routerLink="products" class="col-12 col-md header-link" (click)="isMenuOpen = false; isBasketOpen = false;">Другие товары</a>
+            <a routerLink="information" class="col-12 col-md header-link" (click)="isMenuOpen = false; isBasketOpen = false;">О содержании</a>
+            <a routerLink="contacts" class="col-12 col-md header-link" (click)="isMenuOpen = false; isBasketOpen = false;">Контакты</a>
+            <button (click)="isBasketOpen = !isBasketOpen" class="d-block d-md-none col-12 col-md header-link">Корзина</button>
+          </div>
+        </div>
+        <div class="col-auto d-none d-md-block header-link p-0" (click)="isBasketOpen = !isBasketOpen"
+             [class.header-basket-add]="isAddProductAnimation">
+          <img src="https://fur-chins.ru/MyImages/main/basket.png" class="basket-image" alt="Basket image">
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<app-basket [isOpen]="isBasketOpen"></app-basket>

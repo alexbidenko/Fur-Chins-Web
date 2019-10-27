@@ -1,0 +1,10 @@
+.buying-title {
+  text-align: center;
+  color: gold;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid gold;
+  font-family: 'Roboto', Tahoma, "sans-serif";
+  font-weight: 200;
+  font-size: 28px;
+}

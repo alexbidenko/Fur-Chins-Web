@@ -1,0 +1,70 @@
+.basket-block-container {
+  height: 80px;
+}
+.basket-block-image {
+  float: left;
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin-right: 8px;
+  background: no-repeat center / cover;
+}
+.basket-block-delete {
+  float: right;
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  cursor: pointer;
+
+  transition-property: background;
+  transition-duration: .3s;
+}
+.basket-block-delete:hover {
+  background: rgba(0, 0, 0, .5);
+}
+.basket-block-delete-image {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+@media (max-width: 575px) {
+  .basket-block-delete {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+  .basket-block-delete-image {
+    width: 32px;
+    height: 32px;
+  }
+}
+.basket-block-title {
+  color: gold;
+  font-size: 18px;
+  padding-top: 8px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.basket-block-description {
+  color: white;
+  display: inline;
+}
+.basket-block-count {
+  color: gold;
+  width: 40px;
+  height: 40px;
+  border: 1px solid gold;
+  background: black;
+  text-align: center;
+}
+.basket-block-cost {
+  color: gold;
+  float: right;
+  display: inline;
+  margin-top: 8px;
+}
+.bb {
+  background: black;
+}

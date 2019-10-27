@@ -1,0 +1,49 @@
+.product-block-image {
+  background: no-repeat center / cover;
+  min-height: 320px;
+}
+.product-block-title {
+  color: gold;
+  font-family: 'Roboto', Tahoma, "sans-serif";
+  font-weight: 200;
+}
+.product-block-description {
+  color: white;
+  text-indent: 20px;
+}
+.product-block-button-shadow {
+  padding: 4px;
+  display: block;
+  width: fit-content;
+  margin: auto;
+
+  transition-property: box-shadow;
+  transition-duration: .3s;
+}
+.product-block-button-shadow:hover {
+  box-shadow: inset 0 0 5px 3px black;
+}
+.product-block-button {
+  background: gold;
+  padding: 2px 8px;
+  border: 5px solid #F5EC71;
+  border-right-color: #D1C84B;
+  border-bottom-color: #ABA005;
+  border-left-color: #CFC102;
+  color: black;
+  font-size: 16px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+
+  transition-property: background, border, margin;
+  transition-duration: .3s;
+}
+.product-block-button:hover {
+  background: #e1b900;
+  margin: 1px;
+  border: 4px solid #d7ce6c;
+  border-right-color: #b6ad4b;
+  border-bottom-color: #8e8405;
+  border-left-color: #b7aa02;
+}

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-12 col-sm-6 p-0 product-block-image" [class.order-sm-2]="index % 2 == 1"
+       [style.backgroundImage]="'url(' + product.image + ')'"></div>
+  <div class="col-12 col-sm-6 py-3" [class.order-sm-1]="index % 2 == 1">
+    <h2 class="product-block-title">{{product.title}}</h2>
+    <p class="product-block-description">{{product.description}}</p>
+    <span class="product-block-button-shadow">
+      <button (click)="addProductToBasket()" class="product-block-button">Купить {{product.unit}} за {{product.cost}}</button>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+label {
+  display: block;
+  width: 100%;
+}
+label span {
+  color: gold;
+  font-size: 18px;
+  margin-top: 6px;
+  font-family: 'Roboto', Tahoma, "sans-serif";
+  font-weight: 200;
+  cursor: pointer;
+}
+input[type=text], textarea {
+  background-color: #555;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: white;
+  display: block;
+}
+.checkbox {
+  background: #555;
+  border: 1px solid gold;
+  display: inline-block;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 4px;
+}
+.contacts-send-button-shadow {
+  margin: 0 auto 8px auto;
+  padding: 4px;
+  width: fit-content;
+  display: block;
+
+  transition-property: box-shadow;
+  transition-duration: .3s;
+}
+.contacts-send-button-shadow:hover {
+  box-shadow: inset 0 0 5px 3px black;
+}
+.contacts-send-button {
+  background: gold;
+  padding: 2px 8px;
+  border: 5px solid #F5EC71;
+  border-right-color: #D1C84B;
+  border-bottom-color: #ABA005;
+  border-left-color: #CFC102;
+  color: black;
+  font-size: 16px;
+  display: block;
+  cursor: pointer;
+
+  transition-property: background, border, margin;
+  transition-duration: .3s;
+}
+.contacts-send-button:hover {
+  background: #e1b900;
+  border: 4px solid #d7ce6c;
+  margin: 1px;
+  border-right-color: #b6ad4b;
+  border-bottom-color: #8e8405;
+  border-left-color: #b7aa02;
+}
+.contacts-send-button[disabled] {
+  background: gray;
+  border-color: #717171;
+}

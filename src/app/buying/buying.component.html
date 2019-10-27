@@ -1,0 +1,8 @@
+<div style="height: 50px;"></div>
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="buying-title col">Все стандарты линий разведения Дании, Германии, Польши, Прибалтики</h1>
+  </div>
+
+  <app-buying-block *ngFor="let chinchilla of chinchillas; let i = index" [chinchilla]="chinchilla" [index]="i"></app-buying-block>
+</div>

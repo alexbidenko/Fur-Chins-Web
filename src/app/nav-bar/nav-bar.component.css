@@ -1,0 +1,61 @@
+.header-title {
+  background: black;
+  color: gold;
+  font-family: 'Roboto', Tahoma, "sans-serif";
+  font-weight: 200;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.header-menu-more {
+  width: 50px;
+  height: 50px;
+  background: black;
+
+  transition-property: background;
+  transition-duration: .3s;
+}
+.header-menu-more:hover {
+  background: rgba(0, 0, 0, .5);
+}
+.header-menu-more-button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+.header-link {
+  background: black;
+  height: 50px;
+  color: gold;
+  line-height: 50px;
+  text-align: center;
+  border: 0;
+
+  transition-property: background;
+  transition-duration: .3s;
+}
+.header-link:hover {
+  background: rgba(0, 0, 0, .5);
+}
+.basket-image {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  display: block;
+}
+.header-basket-add {
+  background: rgb(200, 200, 200);
+}
+@media (max-width: 767px) {
+  .header-menu {
+    max-height: 0;
+    overflow: hidden;
+
+    transition-property: max-height;
+    transition-duration: .2s;
+  }
+  .header-menu.open {
+    max-height: 300px;
+  }
+}

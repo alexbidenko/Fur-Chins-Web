@@ -1,0 +1,16 @@
+<div class="costs-cell costs-animation p-2" (click)="addChinToBasket('usual')">
+  <p class="costs-description">{{getDescription(sex, 'usual')}}</p>
+  <p class="costs-cost">{{costs.usual}}</p>
+</div>
+<div class="costs-cell" (click)="isOpenedVariants = !isOpenedVariants">
+  <div *ngIf="!isOpenedVariants" class="costs-animation p-2 pb-0">
+    <p class="costs-description">{{getDescription(sex, 'bronze')}}</p>
+    <p class="costs-cost">от {{costs.bronze}}</p>
+    <span class="costs-hint">Нажмите для выбора</span>
+  </div>
+  <div *ngIf="isOpenedVariants">
+    <span (click)="addChinToBasket('gold')" class="costs-variant bronze">Золото {{costs.gold}}</span>
+    <span (click)="addChinToBasket('silver')" class="costs-variant silver">Серебро {{costs.silver}}</span>
+    <span (click)="addChinToBasket('bronze')" class="costs-variant gold">Бронза {{costs.bronze}}</span>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.footer-container {
+  background: black;
+  padding: 16px;
+}
+.footer-link {
+  color: gold;
+  font-size: 16px;
+  display: inline;
+  height: 24px;
+  white-space: nowrap;
+}

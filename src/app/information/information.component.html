@@ -1,0 +1,29 @@
+<div style="height: 50px;"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <div *ngFor="let info of information; let i = index" (click)="openArticleAt(i)"
+             class="col-6 col-sm-3 col-md-6 information-nav-block p-0"
+            [style.backgroundImage]="'url(' + info.image + ')'">
+          <div class="information-nav-foreground"></div>
+          <h2 class="information-nav-title">{{info.title}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="fade pt-4" [class.show]="isShowArticle">
+        <div *ngIf="!article" class="text-center">
+          <h1 class="information-title text-center">Выберите интересующий Вас раздел</h1>
+          <div style="text-align: center;">
+            <img src="https://fur-chins.ru/MyImages/main/Logo.png" class="information-logo">
+          </div>
+        </div>
+        <div *ngIf="!!article" style="height: 100%;">
+          <h3 class="information-title">{{article.title}}</h3>
+          <p class="information-text">{{article.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

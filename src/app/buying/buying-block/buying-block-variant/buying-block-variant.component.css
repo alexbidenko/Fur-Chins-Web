@@ -1,0 +1,53 @@
+.costs-cell {
+  cursor: pointer;
+}
+.costs-cell:first-child {
+  border-bottom: 1px solid white;
+}
+.costs-cell:last-child {
+  border-top: 1px solid white;
+}
+.costs-animation {
+  transition-property: background;
+  transition-duration: .3s;
+}
+.costs-animation:hover {
+  background: rgba(255, 255, 255, .2);
+}
+.costs-description {
+  color: white;
+  text-align: center;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.costs-cost {
+  color: gold;
+  text-align: center;
+  margin: 0;
+}
+.costs-variant {
+  display: block;
+  color: white;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.costs-variant:hover {
+  text-decoration: underline;
+}
+.costs-variant.bronze {
+  background: rgba(255, 215, 0, 0.5);
+}
+.costs-variant.silver {
+  background: rgba(192, 192, 192, 0.5);
+}
+.costs-variant.gold {
+  background: rgba(205, 127, 50, 0.2);
+}
+.costs-hint {
+  font-size: 10px;
+  display: block;
+  text-align: center;
+  color: white;
+}

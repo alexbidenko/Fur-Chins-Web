@@ -1,0 +1,20 @@
+<div class="basket-background" [class.open]="isOpen">
+
+  <app-basket-block *ngFor="let chinchilla of chinchillas" [data]="chinchilla"></app-basket-block>
+
+  <app-basket-product-block *ngFor="let product of products" [data]="product"></app-basket-product-block>
+
+  <div *ngIf="chinchillas.length == 0 && products.length == 0" class="basket-message bb">
+    Вы еще ничего не выбрали
+  </div>
+  <div *ngIf="chinchillas.length > 0 || products.length > 0" class="bb p-2">
+    <p class="basket-total-cost">Общая стоимость</p>
+    <p class="basket-total-cost">{{totalCost()}}₽</p>
+  </div>
+  <div *ngIf="chinchillas.length > 0 || products.length > 0" (click)="clearBasket()" class="basket-message basket-action bb">
+    Очистить корзину
+  </div>
+  <div *ngIf="chinchillas.length > 0 || products.length > 0" routerLink="contacts" class="basket-message basket-action bb">
+    Заказать
+  </div>
+</div>

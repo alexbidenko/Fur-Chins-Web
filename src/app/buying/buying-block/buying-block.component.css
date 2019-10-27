@@ -1,0 +1,29 @@
+.buying-block-title {
+  color: gold;
+  font-family: 'Roboto', Tahoma, "sans-serif";
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+}
+.costs-col:first-child {
+  border-right: 1px solid white;
+}
+.costs-col:last-child {
+  border-left: 1px solid white;
+}
+.carousel {
+  min-height: 320px;
+  height: 100%;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item {
+  height: 100%;
+  background: no-repeat center / cover;
+}
+@media (max-width: 767px) {
+  .carousel {
+    min-height: 66vw;
+  }
+}

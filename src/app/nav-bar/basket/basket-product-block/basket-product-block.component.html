@@ -1,0 +1,13 @@
+<div class="basket-block-container bb">
+  <div class="basket-block-image" [style.backgroundImage]="'url(' + data.product.image + ')'"></div>
+  <div class="basket-block-delete" (click)="deleteFromBasket()">
+    <img src="https://fur-chins.ru/MyImages/main/basketCancel.png" class="basket-block-delete-image">
+  </div>
+  <h6 class="basket-block-title" style="color: gold;">{{data.product.title}}</h6>
+  <div>
+    <p class="basket-block-description">{{data.product.unit}} x </p>
+    <input [(ngModel)]="data.count" class="basket-block-count">
+
+    <span class="basket-block-cost">{{data.count * data.product.cost}}₽</span>
+  </div>
+</div>

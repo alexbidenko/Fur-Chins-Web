@@ -1,0 +1,50 @@
+.basket-background {
+  width: 550px;
+  max-width: 100vw;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  z-index: 20;
+  overflow-y: auto;
+  max-height: 0;
+
+  transition-property: max-height;
+  transition-duration: .3s;
+}
+.basket-background.open {
+  max-height: calc(100vh - 50px);
+}
+.basket-total-cost {
+  color: gold;
+  display: inline;
+  margin: 0;
+  background: black;
+}
+.basket-total-cost:last-child {
+  float: right;
+}
+.basket-message {
+  text-align: center;
+  color: gold;
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+}
+.basket-action {
+  cursor: pointer;
+
+  transition-property: background;
+  transition-duration: .3s;
+}
+.basket-action:hover {
+  background: rgba(0, 0, 0, .5);
+}
+@media (max-width: 767px) {
+  .basket-background {
+    height: calc(100vh - 50px);
+    background: black;
+  }
+}
+.bb {
+  background: black;
+}

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-12 col-md-6 p-0" [class.order-md-2]="index % 2 == 1">
+    <div id="{{chinchilla.key}}-images-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div *ngFor="let image of chinchilla.images; let i = index" class="carousel-item" [class.active]="i == 0"
+          [style.backgroundImage]="'url(' + image + ')'">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#{{chinchilla.key}}-images-slider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#{{chinchilla.key}}-images-slider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 pt-4" [class.order-md-1]="index % 2 == 1">
+    <h2 class="buying-block-title my-2">{{chinchilla.text}}</h2>
+
+    <div class="row p-4">
+      <div class="col-6 p-0 costs-col">
+        <app-buying-block-variant [keyChinchilla]="chinchilla.key" [sex]="'male'" [costs]="chinchilla.costs.male"></app-buying-block-variant>
+      </div>
+      <div class="col-6 p-0 costs-col">
+        <app-buying-block-variant [keyChinchilla]="chinchilla.key" [sex]="'female'" [costs]="chinchilla.costs.female"></app-buying-block-variant>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div style="height: 50px;"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6 pt-2">
+      <label>
+        <span>Ваше имя</span>
+        <input type="text" [(ngModel)]="userName">
+      </label>
+      <label>
+        <span>Ваш номер телефона</span>
+        <input type="text" [(ngModel)]="userPhone">
+      </label>
+      <label>
+        <span>Ваш email</span>
+        <input type="text" [(ngModel)]="userEmail">
+      </label>
+      <label>
+        <span>Тема сообщения</span>
+        <input type="text" [(ngModel)]="userTitle">
+      </label>
+      <label (click)="userAddBasket = !userAddBasket">
+        <div class="checkbox">
+          <img *ngIf="userAddBasket" src="https://fur-chins.ru/MyImages/main/checkbox.png" class="img-fluid d-block">
+        </div>
+        <span>Прикрепить к письму содержимое корзины</span>
+      </label>
+      <label>
+        <span>Текст сообщения</span>
+        <textarea style="height: 200px;" [(ngModel)]="userMessage"></textarea>
+      </label>
+      <span class="contacts-send-button-shadow">
+        <button (click)="sendMessage()" class="contacts-send-button"
+                [disabled]="!(!!userName && !!userPhone && !!userEmail && !!userTitle && !!userMessage)"
+        >Отправить сообщение</button>
+      </span>
+    </div>
+    <div class="col-6 p-0 d-none d-md-block" style="background: url('https://fur-chins.ru/MyImages/backcall/Image1.jpg') no-repeat center / cover"></div>
+  </div>
+</div>
