@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BasketChinchilla} from '../../../objects/basket-chinchilla';
-import {BasketService} from '../../../services/basket.service';
+import {BasketChinchilla} from '../../../../models/basket-chinchilla';
+import {BasketService} from '../../../../services/basket.service';
 
 @Component({
   selector: 'app-basket-block',

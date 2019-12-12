@@ -13,7 +13,7 @@ export class SendMessageService {
 
   sendMessage(data: object): Observable<any> {
     return this.httpClient.post(
-      'https://fur-chins.ru/send-message.php',
+      '/send-message.php',
       data
     );
   }

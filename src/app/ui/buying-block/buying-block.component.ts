@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Chinchilla} from '../../objects/chinchilla';
+import {Chinchilla} from '../../models/chinchilla';
 
 @Component({
   selector: 'app-buying-block',

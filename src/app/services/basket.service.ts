@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {BasketChinchilla} from '../objects/basket-chinchilla';
-import {CurrentChinchilla} from '../objects/current-chinchilla';
-import {BasketProduct} from '../objects/basket-product';
+import {BasketChinchilla} from '../models/basket-chinchilla';
+import {CurrentChinchilla} from '../models/current-chinchilla';
+import {BasketProduct} from '../models/basket-product';
 
 const KEY_CHINCHILLAS = 'basket_chinchillas';
 const KEY_PRODUCTS = 'basket_products';

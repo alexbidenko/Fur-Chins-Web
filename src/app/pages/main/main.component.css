@@ -1,5 +1,5 @@
 .main-header-image {
-  background: url("https://fur-chins.ru/MyImages/main/BackgroundTopNew.JPG") no-repeat center / cover;
+  background: url("/MyImages/main/BackgroundTopNew.JPG") no-repeat center / cover;
   height: 100vh;
 }
 .main-header-background {

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ChinchillasService} from '../../../services/chinchillas.service';
-import {BasketService} from '../../../services/basket.service';
-import {ShareService} from '../../../services/share.service';
+import {ChinchillasService} from '../../services/chinchillas.service';
+import {BasketService} from '../../services/basket.service';
+import {ShareService} from '../../services/share.service';
 
 @Component({
   selector: 'app-buying-block-variant',

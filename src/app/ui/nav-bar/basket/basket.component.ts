@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BasketService} from '../../services/basket.service';
-import {BasketChinchilla} from '../../objects/basket-chinchilla';
-import {BasketProduct} from '../../objects/basket-product';
+import {BasketService} from '../../../services/basket.service';
+import {BasketChinchilla} from '../../../models/basket-chinchilla';
+import {BasketProduct} from '../../../models/basket-product';
 
 @Component({
   selector: 'app-basket',

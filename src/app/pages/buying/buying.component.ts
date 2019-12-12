@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Chinchilla} from '../objects/chinchilla';
-import {ChinchillasService} from '../services/chinchillas.service';
+import {Chinchilla} from '../../models/chinchilla';
+import {ChinchillasService} from '../../services/chinchillas.service';
 
 @Component({
   selector: 'app-buying',

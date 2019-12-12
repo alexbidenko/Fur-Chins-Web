@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BasketService} from '../services/basket.service';
-import {SendMessageService} from '../services/send-message.service';
+import {BasketService} from '../../services/basket.service';
+import {SendMessageService} from '../../services/send-message.service';
 
 @Component({
   selector: 'app-contacts',
