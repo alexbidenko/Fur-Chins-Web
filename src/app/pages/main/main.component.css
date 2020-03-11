@@ -1,5 +1,5 @@
 .main-header-image {
-  background: url("/MyImages/main/BackgroundTopNew.JPG") no-repeat center / cover;
+  background: url("/assets/main/BackgroundTopNew.JPG") no-repeat center / cover;
   height: 100vh;
 }
 .main-header-background {

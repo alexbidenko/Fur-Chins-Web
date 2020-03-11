@@ -28,7 +28,7 @@ export class BasketComponent implements OnInit {
   }
 
   clearBasket(): void {
-    const answer = this.basketService.clear();
+    const answer = this.basketService.clearBasket();
     answer.chinchillas.subscribe(
       chinchillas => this.chinchillas = chinchillas
     );

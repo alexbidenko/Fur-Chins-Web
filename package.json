@@ -1,13 +1,20 @@
 {
-  "name": "brchinchillas",
-  "version": "0.0.0",
+  "name": "fur-chins",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:client-and-server-bundles": "ng build --prod && ng run Fur-Chins:server:production",
+    "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "compile:server": "tsc -p server.tsconfig.json",
+    "generate:prerender": "cd dist && node prerender",
+    "serve:prerender": "cd dist/browser && http-server",
+    "serve:ssr": "node dist/server"
   },
   "private": true,
   "dependencies": {
@@ -18,20 +25,28 @@
     "@angular/forms": "~8.0.3",
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
+    "@angular/platform-server": "^8.0.3",
+    "@angular/pwa": "^0.900.2",
     "@angular/router": "~8.0.3",
+    "@angular/service-worker": "~8.0.3",
+    "@ngtools/webpack": "^9.0.2",
+    "@nguniversal/express-engine": "^8.2.6",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "ngx-webstorage-service": "^4.0.1",
     "rxjs": "~6.4.0",
+    "ts-loader": "^6.2.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^8.4.1",
     "@angular-devkit/build-angular": "~0.800.6",
     "@angular/cli": "~8.0.6",
     "@angular/compiler-cli": "~8.0.3",
     "@angular/language-service": "~8.0.3",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -43,6 +58,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "webpack-cli": "^3.3.11"
   }
 }

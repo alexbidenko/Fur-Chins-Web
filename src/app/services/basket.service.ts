@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {BasketChinchilla} from '../models/basket-chinchilla';
 import {CurrentChinchilla} from '../models/current-chinchilla';
 import {BasketProduct} from '../models/basket-product';
+import {isPlatformBrowser} from '@angular/common';
 
 const KEY_CHINCHILLAS = 'basket_chinchillas';
 const KEY_PRODUCTS = 'basket_products';
@@ -15,12 +16,17 @@ export class BasketService {
   chinchillas: BasketChinchilla[] = [];
   products: BasketProduct[] = [];
 
-  constructor() {
-    if (localStorage.getItem(KEY_CHINCHILLAS) != null) {
-      this.chinchillas = JSON.parse(localStorage.getItem(KEY_CHINCHILLAS));
+  isBrowser = false;
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+    if (this.getItem(KEY_CHINCHILLAS) != null) {
+      this.chinchillas = JSON.parse(this.getItem(KEY_CHINCHILLAS));
     }
-    if (localStorage.getItem(KEY_PRODUCTS) != null) {
-      this.products = JSON.parse(localStorage.getItem(KEY_PRODUCTS));
+    if (this.getItem(KEY_PRODUCTS) != null) {
+      this.products = JSON.parse(this.getItem(KEY_PRODUCTS));
     }
   }
 
@@ -43,7 +49,7 @@ export class BasketService {
         count: 1
       });
     }
-    localStorage.setItem(KEY_CHINCHILLAS, JSON.stringify(this.chinchillas));
+    this.setItem(KEY_CHINCHILLAS, JSON.stringify(this.chinchillas));
     return of(this.chinchillas);
   }
 
@@ -54,7 +60,7 @@ export class BasketService {
         this.chinchillas.splice(+i, 1);
       }
     }
-    localStorage.setItem(KEY_CHINCHILLAS, JSON.stringify(this.chinchillas));
+    this.setItem(KEY_CHINCHILLAS, JSON.stringify(this.chinchillas));
     return of(this.chinchillas);
   }
 
@@ -76,7 +82,7 @@ export class BasketService {
         product
       });
     }
-    localStorage.setItem(KEY_PRODUCTS, JSON.stringify(this.products));
+    this.setItem(KEY_PRODUCTS, JSON.stringify(this.products));
     return of(this.products);
   }
 
@@ -86,14 +92,34 @@ export class BasketService {
         this.products.splice(+i, 1);
       }
     }
-    localStorage.setItem(KEY_PRODUCTS, JSON.stringify(this.products));
+    this.setItem(KEY_PRODUCTS, JSON.stringify(this.products));
     return of(this.products);
   }
 
-  clear(): { chinchillas: Observable<BasketChinchilla[]>, products: Observable<BasketProduct[]>} {
+  clearBasket(): { chinchillas: Observable<BasketChinchilla[]>, products: Observable<BasketProduct[]>} {
     this.chinchillas = [];
     this.products = [];
-    localStorage.clear();
+    this.clear();
     return { chinchillas: of(this.chinchillas), products: of(this.products) };
+  }
+
+  getItem(key: string) {
+    if (this.isBrowser) {
+      return localStorage.getItem(key);
+    } else {
+      return null;
+    }
+  }
+
+  setItem(key: string, value: string) {
+    if (this.isBrowser) {
+      localStorage.setItem(key, value);
+    }
+  }
+
+  clear() {
+    if (this.isBrowser) {
+      localStorage.clear();
+    }
   }
 }

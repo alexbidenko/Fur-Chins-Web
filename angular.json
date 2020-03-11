@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BRChinchillas": {
+    "Fur-Chins": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fur-chins.ru",
+            "preserveSymlinks": true,
+            "outputPath": "dist/Fur-Chins",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -22,13 +23,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/MyImages",
               "src/chinchillas.json",
               "src/products.json",
               "src/information.json",
               "src/robots.txt",
               "src/send-message.php",
-              "src/Sitemap.xml"
+              "src/Sitemap.xml",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.css"
@@ -58,25 +59,27 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "BRChinchillas:build"
+            "browserTarget": "Fur-Chins:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "BRChinchillas:build:production"
+              "browserTarget": "Fur-Chins:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BRChinchillas:build"
+            "browserTarget": "Fur-Chins:build"
           }
         },
         "test": {
@@ -89,13 +92,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/MyImages",
               "src/chinchillas.json",
               "src/products.json",
               "src/information.json",
               "src/robots.txt",
               "src/send-message.php",
-              "src/Sitemap.xml"
+              "src/Sitemap.xml",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.css"
@@ -120,15 +123,52 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "BRChinchillas:serve"
+            "devServerTarget": "Fur-Chins:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "BRChinchillas:serve:production"
+              "devServerTarget": "Fur-Chins:serve:production"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/Fur-Chins-server",
+            "main": "src/main.server.ts",
+            "tsConfig": "server.tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "Fur-Chins:build",
+            "serverTarget": "Fur-Chins:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Fur-Chins:build:production",
+              "serverTarget": "Fur-Chins:server:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "BRChinchillas"
+  "defaultProject": "Fur-Chins"
 }

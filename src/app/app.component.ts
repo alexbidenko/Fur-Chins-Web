@@ -19,14 +19,14 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let data = this.activatedRoute.snapshot.data;
+    this.titleService.setTitle(data.title);
+    data.meta?.forEach(meta => this.meta.updateTag(meta));
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        const data = this.router.config.find(route => `/${route.path}` === event.urlAfterRedirects).data;
+        data = this.router.config.find(route => `/${route.path}` === event.urlAfterRedirects).data;
         this.titleService.setTitle(data.title);
-        this.meta.addTags([
-          {name: 'keywords', content: data.keywords},
-          {name: 'description', content: data.description}
-        ]);
+        data.meta?.forEach(meta => this.meta.updateTag(meta));
       }
     });
   }

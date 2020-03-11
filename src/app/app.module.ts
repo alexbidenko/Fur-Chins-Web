@@ -18,6 +18,8 @@ import { BasketProductBlockComponent } from './ui/nav-bar/basket/basket-product-
 import { InformationComponent } from './pages/information/information.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,12 @@ import {HttpClientModule} from '@angular/common/http';
     ContactsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
