@@ -5,7 +5,7 @@ import {BasketService} from '../../../../services/basket.service';
 @Component({
   selector: 'app-basket-block',
   templateUrl: './basket-block.component.html',
-  styleUrls: ['../basket-block.component.css']
+  styleUrls: ['./basket-block.component.css']
 })
 export class BasketBlockComponent implements OnInit {
 

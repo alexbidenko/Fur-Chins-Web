@@ -3,6 +3,7 @@ import {Observable, of} from 'rxjs';
 import {BasketChinchilla} from '../models/basket-chinchilla';
 import {CurrentChinchilla} from '../models/current-chinchilla';
 import {BasketProduct} from '../models/basket-product';
+import {Product} from '../models/product';
 import {isPlatformBrowser} from '@angular/common';
 
 const KEY_CHINCHILLAS = 'basket_chinchillas';

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BasketService} from '../../services/basket.service';
 import {ShareService} from '../../services/share.service';
+import {Product} from '../../models/product';
 
 @Component({
   selector: 'app-product-block',

@@ -21,12 +21,16 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let data = this.activatedRoute.snapshot.data;
     this.titleService.setTitle(data.title);
-    data.meta?.forEach(meta => this.meta.updateTag(meta));
+    if (data.meta) {
+      data.meta.forEach(meta => this.meta.updateTag(meta));
+    }
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         data = this.router.config.find(route => `/${route.path}` === event.urlAfterRedirects).data;
         this.titleService.setTitle(data.title);
-        data.meta?.forEach(meta => this.meta.updateTag(meta));
+        if (data.meta) {
+          data.meta.forEach(meta => this.meta.updateTag(meta));
+        }
       }
     });
   }

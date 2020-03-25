@@ -14,7 +14,9 @@
     "compile:server": "tsc -p server.tsconfig.json",
     "generate:prerender": "cd dist && node prerender",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node dist/server",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +34,9 @@
     "@ngtools/webpack": "^9.0.2",
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
+    "@scullyio/init": "0.0.23",
+    "@scullyio/ng-lib-v8": "latest",
+    "@scullyio/scully": "latest",
     "ngx-webstorage-service": "^4.0.1",
     "rxjs": "~6.4.0",
     "ts-loader": "^6.2.1",
@@ -59,6 +64,7 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "@scullyio/ng-lib": "latest"
   }
 }
